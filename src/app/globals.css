@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Neulis Sans';
+  src: url('/fonts/neulis-sans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Neulis Sans Medium';
+  src: url('/fonts/neulis-sans-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Neulis Cursive';
+  src: url('/fonts/neulis-cursive.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neulis Cursive Medium';
+  src: url('/fonts/neulis-cursive-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neulis Cursive Bold';
+  src: url('/fonts/neulis-cursive-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Variáveis de fonte para uso com Tailwind v4 */
+@theme {
+  --font-neulisSans: 'Neulis Sans', sans-serif;
+  --font-neulisSansMedium: 'Neulis Sans Medium', sans-serif;
+  --font-cursive: 'Neulis Cursive', cursive;
+  --font-cursiveMedium: 'Neulis Cursive Medium', cursive;
+  --font-cursiveBold: 'Neulis Cursive Bold', cursive;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Neulis Sans', Helvetica, sans-serif;
 }
