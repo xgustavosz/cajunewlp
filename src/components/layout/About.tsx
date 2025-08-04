@@ -1,9 +1,14 @@
 import Image from "next/image"
 import Container from "../Container"
+import Link from "next/link"
 
-export default function About() {
+interface AboutProps {
+    hasButton?: boolean
+}
+
+export default function About({ hasButton }: AboutProps) {
     return (
-        <div className="py-36 relative">
+        <div className="py-8 lg:py-36 relative overflow-hidden">
             <Container>
                 <h1 className="uppercase font-neulisSansMedium text-center lg:text-start">Sobre a Caju</h1>
                 <div className="flex items-center lg:items-start flex-col lg:flex-row space-x-16">
@@ -18,7 +23,14 @@ export default function About() {
                             />
                             Onde a dança é abrigo, expressão e encontro
                         </p>
-                        <button className="relative z-10 bg-[#DA8331] max-w-60 w-full text-white px-4 py-2 rounded-sm cursor-pointer hover:bg-[#A24154] transition-colors">Veja mais</button>
+                        {!hasButton && (
+                            <Link href="/sobre" passHref className="w-full max-w-60 mx-auto">
+                                <button className="relative z-10 bg-[#DA8331] max-w-60 w-full text-white px-4 py-2 rounded-sm cursor-pointer hover:bg-[#A24154] transition-colors">
+                                    Veja mais
+                                </button>
+                            </Link>
+                        )}
+
                     </div>
 
                     <div className="hidden lg:block absolute left-[-120px] bottom-[-100px]">
@@ -40,7 +52,7 @@ export default function About() {
                         />
                     </div>
 
-                    <div className="font-neulisSansMedium flex flex-col gap-6 max-w-[688px] w-full text-[1.375rem] mt-14 text-center lg:text-start lg:mt-0">
+                    <div className={`font-neulisSansMedium flex flex-col gap-6 max-w-[688px] w-full text-[1.375rem] text-center lg:text-start ${!hasButton ? "mt-10" : ""}`}>
                         <p>
                             A CAJU nasceu de um sonho que começou ainda na infância da professora Julia Caldeira — com um par de sapatilhas nos pés
                             e o coração cheio de vontade de dançar. Com o tempo, essa paixão se transformou em vocação: Julia passou a ensinar, coreografar e viver a dança em sua forma mais verdadeira.
