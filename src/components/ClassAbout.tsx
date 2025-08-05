@@ -11,11 +11,11 @@ interface ClassAboutProps {
 
 export default function ClassAbout({ title, firstText, secondText, imageUrl, reverse }: ClassAboutProps) {
     return (
-        <div className={`relative flex ${reverse ? "justify-end" : "justify-start"}`}>
+        <div className={`relative flex flex-col md:flex-row ${reverse ? "justify-end" : "justify-start"}`}>
             <div className="pt-10">
                 <Image className="shadow-2xl shadow-[#00000054]" src={imageUrl} alt="Imagem da turma" width={818} height={474} />
             </div>
-            <div className={`absolute z-10 bottom-0 ${reverse ? "right-[650px]" : "left-[650px]"} bg-[#FFC945] max-w-[549px] p-10 shadow-[#00000054] shadow-lg`}>
+            <div className={`md:absolute z-10 bottom-0 ${reverse ? "right-[350px] lg:right-[500px] 2xl:right-[650px]" : "left-[350px] lg:left-[500px] 2xl:left-[650px] "} bg-[#FFC945] md:max-w-[549px] p-10 shadow-[#00000054] shadow-lg`}>
                 <p className="font-cursiveMedium text-[#5182E5] text-[1.625rem]">{title}</p>
 
                 <div className="font-neulisSansMedium flex flex-col text-[#292A1C] gap-4">

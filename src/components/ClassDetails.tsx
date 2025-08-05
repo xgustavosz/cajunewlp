@@ -51,50 +51,63 @@ export default function ClassDetails() {
         },
     ]
 
-    return (
-        <div className="relative py-[100px] overflow-hidden">
-            <Image
-                src="/grafismo-04.png"
-                alt="Grafismo"
-                width={522}
-                height={412}
-                className="absolute top-[-180px] right-0 rotate-[230deg]"
-            />
-            <Image
-                src="/grafismo-05.png"
-                alt="Grafismo"
-                width={154}
-                height={278}
-                className="absolute top-[720px] left-[270px]"
-            />
-            <Image
-                src="/grafismo-06.png"
-                alt="Grafismo"
-                width={555}
-                height={874}
-                className="absolute top-[1910px] left-[-160px]"
-            />
-            <Image
-                src="/grafismo-03.png"
-                alt="Grafismo"
-                width={469}
-                height={259}
-                className="absolute top-[2600px] right-[-80px] rotate-[40deg]"
-            />
-            <Image
-                src="/grafismo-02.png"
-                alt="Grafismo"
-                width={420}
-                height={461}
-                className="absolute top-[4370px] left-[0px] rotate-[-50deg]"
-            />
+    const grafismos = [
+        {
+            src: "/grafismo-04.png",
+            alt: "Grafismo",
+            width: 522,
+            height: 412,
+            className: "absolute top-[-180px] right-0 rotate-[230deg]"
+        },
+        {
+            src: "/grafismo-05.png",
+            alt: "Grafismo",
+            width: 154,
+            height: 278,
+            className: "absolute top-[720px] left-[270px]"
+        },
+        {
+            src: "/grafismo-06.png",
+            alt: "Grafismo",
+            width: 555,
+            height: 874,
+            className: "absolute top-[1910px] left-[-160px]"
+        },
+        {
+            src: "/grafismo-03.png",
+            alt: "Grafismo",
+            width: 469,
+            height: 259,
+            className: "absolute top-[2600px] right-[-80px] rotate-[40deg]"
+        },
+        {
+            src: "/grafismo-02.png",
+            alt: "Grafismo",
+            width: 420,
+            height: 461,
+            className: "absolute top-[4370px] left-[0px] rotate-[-50deg]"
+        },
+    ];
 
-            <Container>
+    return (
+        <Container>
+            <div className="relative py-[100px] overflow-hidden">
+                {grafismos.map((grafismo, index) => (
+                    <Image
+                        key={index}
+                        src={grafismo.src}
+                        alt={grafismo.alt}
+                        width={grafismo.width}
+                        height={grafismo.height}
+                        className={grafismo.className}
+                    />
+                ))}
+
                 <div className="flex flex-col">
                     <p className="uppercase font-medium text-[#3A222F]">Nossas turmas</p>
                     <p className="relative font-cursiveMedium text-[#A24154] font-medium text-[2rem]">
                         Cada turma, uma nova possibilidade de expressão.
-                        <Image src="/caju-decoration.svg" alt="Caju Ícone" width={63} height={37} className="absolute top-[-15px] left-[800px]" />
+                        <Image src="/caju-decoration.svg" alt="Caju Ícone" width={63} height={37} className="hidden lg:block absolute top-[-15px] left-[800px]" />
                     </p>
                 </div>
                 <div className="flex flex-col gap-10 w-full">
@@ -102,7 +115,7 @@ export default function ClassDetails() {
                         <ClassAbout key={index} title={item.title} firstText={item.firstText} secondText={item.secondText} imageUrl={item.imageUrl} reverse={index % 2 !== 0} />
                     ))}
                 </div>
-            </Container>
-        </div>
+            </div>
+        </Container>
     )
 }
