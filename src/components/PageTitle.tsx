@@ -34,7 +34,7 @@ export default function PageTitle({ title }: PageTitleProps) {
                 height={304}
             />
 
-            <h1 className="relative font-cursiveBold text-5xl md:text-7xl text-[#FFC945]">
+            <h1 className="relative font-cursiveBold text-7xl text-[#FFC945]">
                 <Image
                     src="/caju-decoration.svg"
                     alt="Logo Caju"
