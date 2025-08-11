@@ -20,11 +20,12 @@ export default function Class() {
     const classes = [
         { title: 'Cajuzinho Class', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
         { title: 'Petit Caju', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Júnior', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Júnior', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Júnior', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Júnior', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Preparatório', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Júnior', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Infanto-Juvenil', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Juvenil', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Avançado', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Adulto-Iniciante', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
     ];
 
     useEffect(() => {
