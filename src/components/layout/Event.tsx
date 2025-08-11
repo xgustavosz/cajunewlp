@@ -78,7 +78,7 @@ export default function Event() {
                     </div>
 
                     <Link
-                        href="#"
+                        href="/eventos"
                         className="text-center text-[#DA8331] font-medium underline"
                     >
                         Veja programação completa

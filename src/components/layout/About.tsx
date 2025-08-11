@@ -24,7 +24,7 @@ export default function About({ hasButton }: AboutProps) {
                             Onde a dança é abrigo, expressão e encontro
                         </p>
                         {!hasButton && (
-                            <Link href="/sobre" passHref className="w-full max-w-60 mx-auto">
+                            <Link href="/sobre" passHref className="w-full max-w-60">
                                 <button className="relative z-10 bg-[#DA8331] max-w-60 w-full text-white px-4 py-2 rounded-sm cursor-pointer hover:bg-[#A24154] transition-colors">
                                     Veja mais
                                 </button>
