@@ -3,7 +3,7 @@ import Container from "./Container";
 
 export default function AboutAlbum() {
     return (
-        <div className="bg-[#CAD36B] py-10 px-4 md:px-10">
+        <div className="bg-[#CAD36B] pt-10 pb-[118px] px-4 md:px-10">
             <Container>
                 <div className="text-center mb-10">
                     <p className="text-[1.25rem] uppercase font-medium text-[#3A222F] tracking-wider">Do sonho à cena</p>
