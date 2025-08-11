@@ -8,9 +8,15 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 const images = [
-    '/banner01.jpg',
-    '/banner02.jpg',
-    '/banner03.jpg',
+    '/banner-01.JPG',
+    '/banner-02.jpeg',
+    '/banner-03.jpeg',
+    '/banner-04.JPG',
+    '/banner-05.JPG',
+    '/banner-06.JPG',
+    '/banner-07.JPG',
+    '/banner-08.jpeg',
+    '/banner-09.jpeg',
 ]
 
 export default function Carousel() {
