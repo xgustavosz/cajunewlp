@@ -70,7 +70,7 @@ Mensagem: ${mensagem}`
                             </div>
 
                             <div>
-                                <p><strong>Telefone:</strong> (13) 8166-3998</p>
+                                <p><strong>Telefone:</strong> (53) 8166-3998</p>
                                 <p><strong>Email:</strong> e-mail@e-email</p>
                             </div>
 

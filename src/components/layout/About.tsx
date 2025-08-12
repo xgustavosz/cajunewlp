@@ -30,7 +30,6 @@ export default function About({ hasButton }: AboutProps) {
                                 </button>
                             </Link>
                         )}
-
                     </div>
 
                     <div className="hidden lg:block absolute left-[-120px] bottom-[-100px]">
