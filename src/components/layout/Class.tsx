@@ -18,14 +18,14 @@ export default function Class() {
     const [isEnd, setIsEnd] = useState(false);
 
     const classes = [
-        { title: 'Cajuzinho Class', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
-        { title: 'Petit Caju', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Preparatório', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Júnior', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Infanto-Juvenil', imageUrl: '/classImage01.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Juvenil', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Avançado', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
-        { title: 'Jazz Dance Adulto-Iniciante', imageUrl: '/classImage02.jpg', buttonLink: '/eventos' },
+        { title: 'Cajuzinho Class', imageUrl: '/card-photo-01.JPG', buttonLink: '/eventos' },
+        { title: 'Petit Caju', imageUrl: '/card-photo-02.JPG', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Preparatório', imageUrl: '/card-photo-03.JPG', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Júnior', imageUrl: '/card-photo-04.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Infanto-Juvenil', imageUrl: '/card-photo-05.JPG', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Juvenil', imageUrl: '/card-photo-06.jpg', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Avançado', imageUrl: '/card-photo-07.JPG', buttonLink: '/eventos' },
+        { title: 'Jazz Dance Adulto-Iniciante', imageUrl: '/card-photo-08.JPG', buttonLink: '/eventos' },
     ];
 
     useEffect(() => {
@@ -96,7 +96,7 @@ export default function Class() {
                     >
                         {classes.map((classItem, index) => (
                             <SwiperSlide key={index}>
-                                <CardClass {...classItem} />
+                                <CardClass cardStyle={index + 1} {...classItem} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
