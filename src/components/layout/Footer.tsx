@@ -51,8 +51,8 @@ export default function Footer() {
                             </p>
                             <p>
                                 Email:{" "}
-                                <a href="mailto:e-mail@e-mail.com" className="hover:text-[#FFC945] hover:underline transition-colors">
-                                    e-mail@e-mail.com
+                                <a href="mailto:caju@cajudanca.com" className="hover:text-[#FFC945] hover:underline transition-colors">
+                                    caju@cajudanca.com
                                 </a>
                             </p>
                         </div>
@@ -65,12 +65,15 @@ export default function Footer() {
                             width={275}
                             height={275}
                         />
-                        <Image
-                            src="/brainny-logo.svg"
-                            alt="Logo Brainny"
-                            width={86}
-                            height={46}
-                        />
+                        <Link href="https://www.brainny.cc" target="_blank">
+                            <Image
+                                src="/brainny-logo.svg"
+                                alt="Logo Brainny"
+                                width={86}
+                                height={46}
+                                className="cursor-pointer"
+                            />
+                        </Link>
                     </div>
 
                     <div className='flex flex-col items-center md:items-start text-lg'>
@@ -104,12 +107,15 @@ export default function Footer() {
                             width={275}
                             height={275}
                         />
-                        <Image
-                            src="/brainny-logo.svg"
-                            alt="Logo Brainny"
-                            width={86}
-                            height={46}
-                        />
+                        <Link href="https://www.brainny.cc">
+                            <Image
+                                src="/brainny-logo.svg"
+                                alt="Logo Brainny"
+                                width={86}
+                                height={46}
+                                className="cursor-pointer"
+                            />
+                        </Link>
                     </div>
                 </div>
             </Container>
