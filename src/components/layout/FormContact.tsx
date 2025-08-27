@@ -29,7 +29,7 @@ export default function FormContact({ isPage }: FormContactProps) {
     }
 
     const handleSubmit = () => {
-        const numeroWhatsApp = "5553981070940"
+        const numeroWhatsApp = "5553981663998"
         const texto = `Nome: ${nome}
 Email: ${email}
 Celular: ${telefone}
