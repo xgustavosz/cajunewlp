@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 
 interface ClassAboutProps {
@@ -6,10 +8,17 @@ interface ClassAboutProps {
     secondText?: string
     imageUrl: string
     reverse?: boolean
-    btnFunction?: () => void
 }
 
 export default function ClassAbout({ title, firstText, secondText, imageUrl, reverse }: ClassAboutProps) {
+    const phoneNumber = "5553981663998"
+
+    const handleClick = () => {
+        const message = `Olá,\n\nGostaria de saber mais sobre horários e informações da turma ${title}.`
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+        window.open(url, "_blank")
+    }
+
     return (
         <div className={`relative flex flex-col md:flex-row ${reverse ? "justify-end" : "justify-start"}`}>
             <div className="pt-10">
@@ -28,7 +37,12 @@ export default function ClassAbout({ title, firstText, secondText, imageUrl, rev
                     </p>
                 </div>
 
-                <button className="bg-[#DA8331] cursor-pointer hover:bg-[#A24154] text-white w-full h-[50px] font-medium transition-colors mt-10">Horários e infos da turma</button>
+                <button
+                    onClick={handleClick}
+                    className="bg-[#DA8331] cursor-pointer hover:bg-[#A24154] text-white w-full h-[50px] font-medium transition-colors mt-10"
+                >
+                    Horários e infos da turma
+                </button>
             </div>
         </div>
     )

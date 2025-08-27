@@ -45,7 +45,7 @@ export default function Footer() {
                         <div className="mt-6 flex flex-col gap-1">
                             <p>
                                 Whatsapp:{" "}
-                                <a href="https://wa.me/555381663998" className="hover:text-[#FFC945] hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
+                                <a href="https://wa.me/5553981663998" className="hover:text-[#FFC945] hover:underline transition-colors" target="_blank" rel="noopener noreferrer">
                                     (53) 8166-3998
                                 </a>
                             </p>
