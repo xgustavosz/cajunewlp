@@ -65,7 +65,7 @@ export default function Footer() {
                             width={275}
                             height={275}
                         />
-                        <Link href="https://www.brainny.cc">
+                        <Link href="https://www.brainny.cc" target="_blank">
                             <Image
                                 src="/brainny-logo.svg"
                                 alt="Logo Brainny"
