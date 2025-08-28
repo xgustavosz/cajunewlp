@@ -4,12 +4,14 @@ import { useState } from "react"
 import Link from "next/link"
 import Container from "../Container"
 import Image from "next/image"
+import toast from "react-hot-toast"
 
 interface FormContactProps {
     isPage?: boolean;
 }
 
 export default function FormContact({ isPage }: FormContactProps) {
+    const [isFormLoading, setIsFormLoading] = useState(false)
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [telefone, setTelefone] = useState("")
@@ -28,15 +30,34 @@ export default function FormContact({ isPage }: FormContactProps) {
         }
     }
 
-    const handleSubmit = () => {
-        const numeroWhatsApp = "5553981663998"
-        const texto = `Nome: ${nome}
-Email: ${email}
-Celular: ${telefone}
-Mensagem: ${mensagem}`
-        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`
-        window.open(url, "_blank")
-    }
+    const handleSubmit = async () => {
+        setIsFormLoading(true);
+        try {
+            const res = await fetch("/api/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome, email, telefone, mensagem }),
+            });
+
+            if (res.ok) {
+                toast.success("Mensagem enviada com sucesso! 🎉");
+
+                setNome("");
+                setEmail("");
+                setTelefone("");
+                setMensagem("");
+            } else {
+                  toast.error("Erro ao enviar mensagem. Tente novamente.");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("Erro ao conectar com o servidor.");
+            alert("Erro ao conectar com o servidor.");
+        } finally {
+            setIsFormLoading(false);
+        }
+    };
+
 
     return (
         <div className="relative bg-[#FCF8F3] py-[60px] overflow-hidden">
@@ -71,7 +92,7 @@ Mensagem: ${mensagem}`
 
                             <div>
                                 <p><strong>Telefone:</strong> (53) 8166-3998</p>
-                                <p><strong>Email:</strong> e-mail@e-email</p>
+                                <p><strong>Email:</strong> caju@cajudanca.com</p>
                             </div>
 
                             <div>
@@ -122,9 +143,10 @@ Mensagem: ${mensagem}`
                             ></textarea>
                             <button
                                 onClick={handleSubmit}
-                                className="bg-[#DA8331] cursor-pointer hover:bg-[#A24154] text-white w-full h-[50px] font-medium transition-colors"
+                                className="bg-[#DA8331] cursor-pointer hover:bg-[#A24154] text-white w-full h-[50px] font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                disabled={isFormLoading}
                             >
-                                Enviar
+                                {isFormLoading ? "Enviando..." : "Enviar"}
                             </button>
                         </div>
                     </div>
