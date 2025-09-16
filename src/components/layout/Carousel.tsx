@@ -7,16 +7,16 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const images = [
-    '/banner-01.JPG',
-    '/banner-02.jpeg',
-    '/banner-03.jpeg',
-    '/banner-04.JPG',
-    '/banner-05.JPG',
-    '/banner-06.JPG',
-    '/banner-07.JPG',
-    '/banner-08.jpeg',
-    '/banner-09.jpeg',
+const slides = [
+    { src: '/banner-01.JPG', alignment: 'object-center' },
+    { src: '/banner-02.jpeg', alignment: 'object-center' },
+    { src: '/banner-03.jpeg', alignment: 'object-center' },
+    { src: '/banner-04.JPG', alignment: 'object-center' },
+    { src: '/banner-05.JPG', alignment: 'object-center' },
+    { src: '/banner-06.JPG', alignment: 'object-[20%_50%]' },
+    { src: '/banner-07.JPG', alignment: 'object-[70%_50%]' },
+    { src: '/banner-08.jpeg', alignment: 'object-center' },
+    { src: '/banner-09.jpeg', alignment: 'object-bottom' },
 ]
 
 export default function Carousel() {
@@ -29,15 +29,15 @@ export default function Carousel() {
                 loop
                 className="w-full max-w-[1680px] h-[600px]"
             >
-                {images.map((src, index) => (
+                {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div className="relative w-full h-[600px]">
                             <Image
-                                src={src}
+                                src={slide.src}
                                 alt={`Slide ${index + 1}`}
                                 width={1680}
                                 height={600}
-                                className="object-cover w-full h-full"
+                                className={`w-full h-full object-cover ${slide.alignment}`}
                                 priority={index === 0}
                                 quality={90}
                             />
