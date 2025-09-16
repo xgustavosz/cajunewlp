@@ -35,28 +35,31 @@ export default function Carousel() {
                             <Image
                                 src={src}
                                 alt={`Slide ${index + 1}`}
-                                fill
-                                className="object-cover"
+                                width={1680}
+                                height={600}
+                                className="object-cover w-full h-full"
                                 priority={index === 0}
+                                quality={90}
                             />
                         </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
+
             <style jsx global>{`
-            .swiper-pagination {
-                bottom: 20px !important;
-            }
+        .swiper-pagination {
+          bottom: 20px !important;
+        }
 
-            .swiper-pagination-bullet {
-                border: 1px solid #FFF;
-                opacity: 1;
-            }
+        .swiper-pagination-bullet {
+          border: 1px solid #FFF;
+          opacity: 1;
+        }
 
-            .swiper-pagination-bullet-active {
-                background-color: #FFF;
-            }
-            `}</style>
+        .swiper-pagination-bullet-active {
+          background-color: #FFF;
+        }
+      `}</style>
         </div>
     )
 }
