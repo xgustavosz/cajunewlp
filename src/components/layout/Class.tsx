@@ -54,18 +54,16 @@ export default function Class() {
                             <button
                                 ref={prevRef}
                                 disabled={isBeginning}
-                                className={`w-10 h-12 cursor-pointer rounded text-white transition ${
-                                    isBeginning ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#DA8331] hover:bg-[#A24154]'
-                                }`}
+                                className={`w-10 h-12 cursor-pointer rounded text-white transition ${isBeginning ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#DA8331] hover:bg-[#A24154]'
+                                    }`}
                             >
                                 ←
                             </button>
                             <button
                                 ref={nextRef}
                                 disabled={isEnd}
-                                className={`w-10 h-12 cursor-pointer rounded text-white transition ${
-                                    isEnd ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#DA8331] hover:bg-[#A24154]'
-                                }`}
+                                className={`w-10 h-12 cursor-pointer rounded text-white transition ${isEnd ? 'bg-gray-300 cursor-not-allowed' : 'bg-[#DA8331] hover:bg-[#A24154]'
+                                    }`}
                             >
                                 →
                             </button>
@@ -74,8 +72,12 @@ export default function Class() {
 
                     <Swiper
                         modules={[Navigation, Pagination]}
+                        // mobile: 1 slide por vez e centralizado
                         slidesPerView={1}
+                        centeredSlides={true}
+                        centeredSlidesBounds={true}
                         spaceBetween={20}
+                        watchOverflow={true}
                         onSwiper={(swiper) => setSwiperInstance(swiper)}
                         onInit={(swiper) => {
                             // @ts-expect-error: Swiper navigation types
@@ -85,21 +87,25 @@ export default function Class() {
                             swiper.navigation.init();
                             swiper.navigation.update();
                         }}
-                        pagination={{ clickable: true, el: '.swiper-pagination' }}
+                        pagination={{ clickable: true, el: ".swiper-pagination" }}
                         breakpoints={{
-                            640: { slidesPerView: 1.5 },
-                            768: { slidesPerView: 2.5 },
-                            1024: { slidesPerView: 3.5 },
-                            1280: { slidesPerView: 4 },
+                            640: { slidesPerView: 1.5, centeredSlides: false },
+                            768: { slidesPerView: 2.5, centeredSlides: false },
+                            1024: { slidesPerView: 3.5, centeredSlides: false },
+                            1280: { slidesPerView: 4, centeredSlides: false },
                         }}
-                        className="max-w-7xl mx-auto"
+                        className="max-w-7xl mx-auto px-4"
                     >
                         {classes.map((classItem, index) => (
-                            <SwiperSlide key={index}>
-                                <CardClass {...classItem} />
+                            <SwiperSlide key={index} className="flex justify-center">
+                                {/* wrapper que define o tamanho máximo do card e centraliza o conteúdo */}
+                                <div className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px]">
+                                    <CardClass {...classItem} />
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
 
                     <div className="swiper-pagination mt-6 flex justify-center" />
                 </section>

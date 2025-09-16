@@ -75,3 +75,9 @@ html {
     font-size: 12px;
   }
 }
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

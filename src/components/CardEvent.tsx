@@ -10,7 +10,7 @@ export default function CardEvent({ imageUrl, title, description }: CardEventPro
     const [firstWord, ...rest] = title.split(" ");
 
     return (
-        <div className="bg-[#FCF8F3] w-full max-w-[285px] h-[446px] shadow-md">
+        <div className="bg-[#FCF8F3] w-full max-w-[400px] md:max-w-[285px] h-[446px] shadow-md">
             <div className="w-full h-[300px] relative">
                 <Image
                     src={imageUrl}
